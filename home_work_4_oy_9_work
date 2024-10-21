@@ -1,0 +1,192 @@
+1
+son1=[]
+son2=[]
+sonlar=[1,2,3,4,5,6,7,8,9,10]
+def check(sonlar):
+    for i in sonlar:
+        if i%2==0:
+            son1.append(i)
+        else:
+            son2.append(i)
+        return son1, son2
+print(f"{check(son1)} juft sonlar           { check(son2)} toq sonlar  ")
+            
+
+2
+raqamlar = (1, 2, 3, 4, 5)
+raqamlar_list = list(raqamlar)  
+
+
+for i in range(len(raqamlar_list)):
+    for j in range(i + 1, len(raqamlar_list)):
+        if raqamlar_list[i] < raqamlar_list[j]:
+        
+            raqamlar_list[i], raqamlar_list[j] = raqamlar_list[j], raqamlar_list[i]
+
+
+print(f"kamayish tartibida boldi {raqamlar_list }" )
+# 3
+raqamlar = [1, 2, 3, 4,10, 5]
+
+yigindi = 0
+i = 0
+
+while i < len(raqamlar):
+    print(i)
+    yigindi += raqamlar[i] 
+    i+= 1 
+print(f"jami yigindi {yigindi}")
+
+4
+my_list = [10, 20, 30, 40, 50]
+my_list.remove(10)
+my_list.append(10)
+print(my_list)
+
+
+5
+my_list = [10, 20, 30, 40, 50]
+
+eng_katta = my_list[0]
+eng_kichik = my_list[0]
+
+for i in my_list:
+    if i > eng_katta:
+        eng_katta = i
+    if i < eng_kichik:
+        eng_kichik = i
+
+print(f"Eng katta son: {eng_katta}")
+print(f"Eng kichik son: {eng_kichik}")
+
+6
+number=[1,2,3,4,46,5,5432,132,132,4,654,65,654,987,98,89,5,2,235,654,64,68,98,94,1,32,98]
+# 1_variant
+number2=set(number)
+print(number2)
+# 2_variant
+unikal_sonlar = []
+
+for i in number:
+    if i not in unikal_sonlar:
+        unikal_sonlar.append(i)
+
+
+print(unikal_sonlar)
+
+# 7
+raqamlar='abcdefghijklmnopqrstuvwxyz'
+raqamlar_list = list(raqamlar)
+
+
+for i in range(len(raqamlar_list)):
+    for j in range(i + 1, len(raqamlar_list)):
+        if raqamlar_list[i] < raqamlar_list[j]:
+            raqamlar_list[i], raqamlar_list[j] = raqamlar_list[j], raqamlar_list[i]
+
+print(f"Kamayish tartibida: {raqamlar_list}")
+
+
+# 8
+sozlar = ["salom", "dunyo", "Python", "programmalaash", "muhit", "javob"]
+eng_uzun_soz = ""
+for soz in sozlar:
+    if len(soz) > len(eng_uzun_soz):
+        eng_uzun_soz = soz
+print(f"Eng uzun so'z: {eng_uzun_soz}")
+
+# 9
+def big_word(sozlar):
+    katta_sozlar = []
+    for soz in sozlar:
+        katta_sozlar.append(soz.upper())
+    return katta_sozlar
+sozlar = ["salom", "dunyo", "Python", "programmalaash", "muhit"]
+natija = big_word(sozlar)
+print(natija)
+
+# 10
+def word (sozlar):
+    return [soz for soz in sozlar if soz[0].isupper()]
+
+
+sozlar = ["Salom", "dunyo", "Python", "java", "Ozbekiston"]
+print(word (sozlar))
+
+
+# 11
+def word_len(sozlar):
+    return [len(soz) for soz in sozlar]
+
+
+sozlar = ["salom", "dunyo", "Python"]
+print(word_len(sozlar))
+
+
+# 12
+
+def discover(sozlar, qidirilayotgan_soz):
+    return qidirilayotgan_soz in sozlar
+
+sozlar = ["salom", "dunyo", "Python"]
+qidirilayotgan_soz = "Python"
+print(discover(sozlar, qidirilayotgan_soz))
+
+# 13
+
+def word_min(sozlar):
+    return [soz.lower() for soz in sozlar]
+
+
+sozlar = ["Salom", "DUNYO", "Python"]
+print(word_min(sozlar))
+
+# 14
+
+def delete (sozlar, ochiriladigan_soz):
+    if ochiriladigan_soz in sozlar:
+        sozlar.remove(delete)
+    return sozlar
+
+sozlar = ["salom", "dunyo", "Python"]
+print(delete(sozlar, "dunyo"))
+
+
+
+15
+def discover_index (sozlar, qidirilayotgan_soz):
+    if qidirilayotgan_soz in sozlar:
+        return sozlar.index(qidirilayotgan_soz)
+    return -1  
+
+sozlar = ["salom", "dunyo", "Python"]
+print(discover_index(sozlar, "Python"))
+
+
+16
+def teskari_tartib(sozlar):
+    return sozlar[::-1]
+
+
+sozlar = ["salom", "dunyo", "Python"]
+print(teskari_tartib(sozlar))
+
+17
+def faqat_raqamlar(sozlar):
+    raqamlar = []
+    for soz in sozlar:
+        raqamlar.extend([char for char in soz if char.isdigit()])
+    return raqamlar
+
+
+sozlar = ["salom123", "dunyo4", "Pyt8hon"]
+print(faqat_raqamlar(sozlar))
+
+18
+def muayyan_uzunlikdagi_sozlar(sozlar, uzunlik):
+    return [soz for soz in sozlar if len(soz) == uzunlik]
+
+
+sozlar = ["salom", "dunyo", "Python", "java"]
+uzunlik = 4
+print(muayyan_uzunlikdagi_sozlar(sozlar, uzunlik))
